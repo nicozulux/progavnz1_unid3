@@ -1,20 +1,21 @@
 package borbuja;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class borbuja {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.print("Ingrese la cantidad de números: ");
+        System.out.print("¿cuantos numeros vamos a organizar?: ");
         int n = input.nextInt();
 
         int[] nums = new int[n];
         for (int i = 0; i < n; i++) {
-            System.out.printf("Ingrese el número %d: ", i + 1);
+            System.out.printf("cuale es el numero %d: ", i + 1);
             nums[i] = input.nextInt();
         }
 
-        System.out.printf("Arreglo original: %s\n", Arrays.toString(nums));
+        System.out.printf("Este sera lo que organizaremos: %s\n", Arrays.toString(nums));
 
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
@@ -23,10 +24,10 @@ public class borbuja {
                     nums[j] = nums[j + 1];
                     nums[j + 1] = temp;
                 }
-                System.out.printf("Paso %d: %s\n", i * (n - 1) + j + 1, Arrays.toString(nums));
+                System.out.printf("asi lo organice %d: %s\n", i * (n - 1) + j + 1, Arrays.toString(nums));
             }
         }
 
-        System.out.printf("Arreglo ordenado: %s\n", Arrays.toString(nums));
+        System.out.printf("Finalmente quedo así: %s\n", Arrays.toString(nums));
     }
 }
